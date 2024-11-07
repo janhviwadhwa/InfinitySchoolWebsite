@@ -1,0 +1,331 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #053f5b;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+section {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 900px;
+    text-align: center;
+}
+
+#services h2, #contact h2 {
+    color: #053f5b;
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.card {
+    width: 250px;
+    height: 150px;
+    color: #fff;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+#contact {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-top: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #053f5b;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+/* Card container styling */
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Individual card styling */
+.card {
+    width: 250px;
+    height: 180px;
+    perspective: 1000px;
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.card-front {
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+}
+
+.card-back {
+    background: #053f5b; /* Change this color to match your theme */
+    transform: rotateY(180deg);
+    padding: 20px;
+    font-size: 0.9em;
+}
+/* Gallery Section Styles */
+#gallery {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures the section takes the full viewport height */
+    width: 100%; /* Ensures the section spans the full width */
+    box-sizing: border-box; /* Ensures padding doesn't affect the width */
+}
+
+#gallery h2 {
+    font-size: 2.5em;
+    color: #053f5b;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.gallery-description {
+    font-size: 1.2em;
+    color: #053f5b;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the gallery container */
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay-text {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-description {
+        font-size: 1.1em;
+    }
+}
+
+/* Contact Section Styles */
+#contact {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+    margin-bottom: 50px; /* Adds space below the contact section */
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    color: #053f5b;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+#contact p {
+    font-size: 1.2em;
+    color: #053f5b;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #053f5b;
+    color: white;
+    margin-top: 50px; /* Adds space above the footer */
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+/* Ensuring the footer stays at the bottom of the page */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* This ensures the main content fills the available space */
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    #contact p {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    #contact h2 {
+        font-size: 2em;
+    }
+}
